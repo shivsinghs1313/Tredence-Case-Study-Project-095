@@ -1,0 +1,30 @@
+# Configuration for Self-Pruning Neural Network Experiments
+
+data:
+  dataset: "CIFAR10"
+  batch_size: 128
+  num_workers: 4
+  img_size: 32
+  channels: 3
+  num_classes: 10
+
+model:
+  in_features: 3072 # 32x32x3
+  hidden_layers: [2048, 1024, 512]
+  out_features: 10
+  dropout_rate: 0.1
+
+training:
+  epochs: 5
+  lr: 0.001
+  weight_decay: 0.01
+  initial_temp: 1.0
+  final_temp: 0.1
+  lambdas: [0, 0.0001, 0.001, 0.005, 0.01] # Experiment sweep
+  seed: 42
+  mixed_precision: true
+
+paths:
+  outputs_dir: "outputs"
+  checkpoints_dir: "outputs/checkpoints"
+  graphs_dir: "outputs/graphs"
