@@ -1,4 +1,4 @@
-# The Self-Pruning Neural Network 🧠✂️
+# The Self-Pruning Neural Network 
 
 A complete PyTorch pipeline demonstrating a custom neural network architecture that learns to dynamically disable its own weak weight connections during training. 
 
